@@ -6,8 +6,9 @@ urlpatterns = patterns('',
     # url(r'^$', 'POD.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
   
-    url(r'^$', 'News.views.index'),
+    url(r'^$', 'News.views.eventview'),
     url(r'^clan/', 'News.views.clan'),
     url(r'^News/', include('News.urls', namespace='News')),
     url(r'^admin/', include(admin.site.urls)),
+    
 )

@@ -12,7 +12,7 @@ class Event(models.Model):
     titleEvent=models.CharField(max_length=200)
     bodyEvent=models.TextField()
     author = models.ForeignKey(User, blank=True, null=True)
-    slug = models.SlugField(unique=True)
+    slug = models.SlugField(('slug'), unique=True)
     publish = models.DateTimeField(default=datetime.datetime.now)
     created = models.DateTimeField(auto_now=True)
     modified = models.DateTimeField(auto_now_add=True)
@@ -22,10 +22,8 @@ class Event(models.Model):
         return u'%s' % self.titleEvent
     @permalink
     def get_absolute_url(self):
-    	return ('django.views.generic.list_detail.object_detail', None, {'object_id':self.id})
+        return ('eventviews', None, {'slug': self.slug})
 
 class Photo(models.Model):
     photo= models.ImageField(storage=fs)
 
-admin.site.register(Event)
-admin.site.register(Photo)
