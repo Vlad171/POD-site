@@ -20,7 +20,7 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('titleEvent', models.CharField(max_length=200)),
                 ('bodyEvent', models.TextField()),
-                ('slug', models.SlugField(unique=True)),
+                ('slug', models.SlugField(unique=True, verbose_name=b'slug')),
                 ('publish', models.DateTimeField(default=datetime.datetime.now)),
                 ('created', models.DateTimeField(auto_now=True)),
                 ('modified', models.DateTimeField(auto_now_add=True)),

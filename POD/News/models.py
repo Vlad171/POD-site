@@ -4,13 +4,14 @@ import datetime
 from django.core.files.storage import FileSystemStorage
 from django.contrib import admin
 from django.contrib.auth.models import User
+from redactor.fields import RedactorField
 # Create your models here.
 
 fs=FileSystemStorage(location='/media/photos')
 
 class Event(models.Model):
     titleEvent=models.CharField(max_length=200)
-    bodyEvent=models.TextField()
+    bodyEvent=RedactorField(verbose_name=u'Text')
     author = models.ForeignKey(User, blank=True, null=True)
     slug = models.SlugField(('slug'), unique=True)
     publish = models.DateTimeField(default=datetime.datetime.now)
