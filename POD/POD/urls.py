@@ -10,5 +10,5 @@ urlpatterns = patterns('',
     url(r'^clan/', 'News.views.clan'),
     url(r'^News/', include('News.urls', namespace='News')),
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^redactor/', include('redactor.urls')),
+    url(r'^ckeditor/', include('ckeditor.urls')),
 )

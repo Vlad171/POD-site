@@ -1,4 +1,6 @@
 {% extends "News/index.html" %}
 {% block content %}
-{{Events}}
+{% for events in Events %}
+   {{events.bodyEvent|safe}}
+{% endfor%}
 {% endblock %}

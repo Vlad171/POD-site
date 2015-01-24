@@ -7,5 +7,6 @@ urlpatterns = patterns('',
 
    url(r'^$', views.eventview, name='eventview'),
    url(r'^clan/', views.clan, name='clan' ),
-   url(r'^redactor/', include('redactor.urls')),
+   url(r'^ckeditor/', include('ckeditor.urls')),
+
 )

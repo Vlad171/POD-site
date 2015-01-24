@@ -34,12 +34,22 @@
 <div id="main_left_content">
 <div class="post">
 <div class="post_title">
-<h1 class="left"><a href="#">Porttitor posuere</a></h1>
-<div class="post_date right">April 13th, 2008</div>
+<h1 class="left">
+{% for events in Events1 %}
+   {{events.titleEvent|safe}}
+{% endfor%}
+</h1>
+<div class="post_date right">
+{% for events in Events1 %}
+   {{events.publish|safe}}
+{% endfor%}
+</div>
 <div class="clearer">&nbsp;</div>
 </div>
 <div class="post_body">
-{% block content %}{% endblock %}
+{% for events in Events1 %}
+   {{events.bodyEvent|safe}}
+{% endfor%}
 <div class="post_metadata">
 <div class="content">
 <div class="left"> Posted in <a href="#">Maecenas</a>,
@@ -55,23 +65,22 @@ tagged: <a href="#">arcu</a>, <a href="#">eget</a>,
 </div>
 <div class="post">
 <div class="post_title">
-<h1 class="left"><a href="#">Adipiscing</a></h1>
-<div class="post_date right">March 10th, 2008</div>
+<h1 class="left">
+{% for events1 in Events2 %}
+   {{events1.titleEvent|safe}}
+{% endfor%}
+</h1>
+<div class="post_date right">
+{% for events1 in Events2 %}
+   {{events1.publish|safe}}
+{% endfor%}	
+</div>
 <div class="clearer">&nbsp;</div>
 </div>
 <div class="post_body">
-<p>Aliquam risus justo, mollis in, laoreet a, consectetuer nec,
-risus. Nunc blandit sodales lacus. Nam luctus semper mi.</p>
-<ul>
-<li>Tristique</li>
-<li>Aenean</li>
-<li>Pretium</li>
-</ul>
-<p>In hac habitasse platea dictumst. Duis porttitor. Sed
-vulputate elementum nisl. Vivamus et mi at arcu mattis iaculis. Nullam
-posuere tristique tortor. In bibendum. Aenean ornare, nunc eget pretium
-porttitor, sem est pretium leo, non euismod nulla dui non diam.
-Pellentesque dictum faucibus leo. Vestibulum ac ante. Sed in est.</p>
+{% for events1 in Events2 %}
+   {{events1.bodyEvent|safe}}
+{% endfor%}
 <div class="post_metadata">
 <div class="content">
 <div class="left"> Posted in <a href="#">Vestibulum</a>,

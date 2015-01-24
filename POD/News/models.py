@@ -4,14 +4,14 @@ import datetime
 from django.core.files.storage import FileSystemStorage
 from django.contrib import admin
 from django.contrib.auth.models import User
-from redactor.fields import RedactorField
+from ckeditor.fields import RichTextField
 # Create your models here.
 
-fs=FileSystemStorage(location='/media/photos')
+fs=FileSystemStorage(location='uploads/')
 
 class Event(models.Model):
     titleEvent=models.CharField(max_length=200)
-    bodyEvent=RedactorField(verbose_name=u'Text')
+    bodyEvent=RichTextField()
     author = models.ForeignKey(User, blank=True, null=True)
     slug = models.SlugField(('slug'), unique=True)
     publish = models.DateTimeField(default=datetime.datetime.now)
@@ -20,7 +20,8 @@ class Event(models.Model):
     eventPhoto=models.ForeignKey('Photo', blank=True,null=True)
 
     def __unicode__(self):
-        return u'%s' % self.titleEvent
+        return u'%s' % self.bodyEvent
+
     @permalink
     def get_absolute_url(self):
         return ('eventviews', None, {'slug': self.slug})

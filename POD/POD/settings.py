@@ -37,7 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'redactor',
+    'ckeditor',
     'News'
 )
 
@@ -74,8 +74,7 @@ DATABASES = {
 
 LANGUAGE_CODE = 'en-us'
 
-REDACTOR_OPTIONS = {'lang': 'en'}
-REDACTOR_UPLOAD = 'uploads/'
+CKEDITOR_UPLOAD_PATH = "uploads/"
 
 TIME_ZONE = 'UTC'
 
@@ -85,7 +84,11 @@ USE_L10N = True
 
 USE_TZ = True
 
+STATIC_ROOT="static/"
 
+CKEDITOR_JQUERY_URL = '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'
+
+CKEDITOR_CONFIGS = {     'default': {         'forcePasteAsPlainText': True     } } 
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/

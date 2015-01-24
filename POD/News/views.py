@@ -11,6 +11,7 @@ def clan(request):
 	return render(request, 'News/clan.html')
 
 def eventview(request):
-	event_details=Event.objects.all()
-	context={'Events':event_details}
-	return render (request, 'News/Event.html', context)
+	event_details1=Event.objects.order_by('-publish')[:1]
+	event_details2=Event.objects.order_by('-publish')[1:2]
+	context={'Events1':event_details1, 'Events2':event_details2}
+	return render (request, 'News/index.html', context)
