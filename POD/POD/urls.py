@@ -8,7 +8,7 @@ urlpatterns = patterns('',
   
     url(r'^$', 'News.views.eventview'),
     url(r'^clan/', 'News.views.clan'),
-    url(r'^News/', include('News.urls', namespace='News')),
+    url(r'^', include('News.urls')),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^ckeditor/', include('ckeditor.urls')),
 )

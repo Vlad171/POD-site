@@ -72,17 +72,22 @@ DATABASES = {
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+MEDIA_ROOT = 'uploads/'
+MEDIA_URL = 'http://127.0.0.1:8000/uploads/'
+
+LANGUAGE_CODE = 'ru-RU'
 
 CKEDITOR_UPLOAD_PATH = "uploads/"
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'UTC+4'
 
 USE_I18N = True
 
 USE_L10N = True
 
 USE_TZ = True
+
+DATE_FORMAT = 'd E Y'
 
 STATIC_ROOT="static/"
 

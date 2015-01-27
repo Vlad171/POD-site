@@ -29,3 +29,6 @@ class Event(models.Model):
 class Photo(models.Model):
     photo= models.ImageField(storage=fs)
 
+class MainPhoto(models.Model):
+	mainphoto=models.ImageField(storage=fs)
+
