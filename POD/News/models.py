@@ -7,7 +7,7 @@ from django.contrib.auth.models import User
 from ckeditor.fields import RichTextField
 # Create your models here.
 
-fs=FileSystemStorage(location='uploads/')
+fs=FileSystemStorage(location='media/')
 
 class Event(models.Model):
     titleEvent=models.CharField(max_length=200)
