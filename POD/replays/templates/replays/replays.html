@@ -1,0 +1,59 @@
+{% extends "News/index.html" %}
+{% block content %}
+<div id="main_left_content">
+<div class="post">
+<div class="post_title">
+<h1 class="left"><a href="/replays/{{replay1.slug}}">{{replay1.replaytitle|safe}}</a>
+</h1>
+<div class="post_date right">
+   {{replay1.publishreplay|safe}}
+</div>
+<div class="clearer">&nbsp;</div>
+</div>
+<div class="post_body">
+{{replay1.html|safe}}
+<div class="post_metadata">
+<div class="content">
+<div class="left"> Posted in <a href="#">Maecenas</a>,
+tagged: <a href="#">arcu</a>, <a href="#">eget</a>,
+<a href="#">pretium</a>, <a href="#">porttitor</a>
+</div>
+<div class="right"> <span class="comment"><a href="#">4 Comments</a></span> </div>
+<div class="clearer">&nbsp;</div>
+</div>
+</div>
+</div>
+<div class="post_bottom"></div>
+</div>
+<div class="post">
+<div class="post_title">
+<h1 class="left"> <a href="/replays/{{replay2.slug}}">{{replay2.replaytitle|safe}}</a>
+</h1>
+<div class="post_date right">
+   {{replay2.publishreplay|safe}}
+</div>
+<div class="clearer">&nbsp;</div>
+</div>
+<div class="post_body">
+   {{replay2.html|safe}}
+<div class="post_metadata">
+<div class="content">
+<div class="left"> Posted in <a href="#">Vestibulum</a>,
+tagged: <a href="#">diam</a>, <a href="#">vulputate</a>,
+<a href="#">platea</a> </div>
+<div class="right"> <span class="comment"><a href="#">11 Comments</a></span> </div>
+<div class="clearer">&nbsp;</div>
+</div>
+</div>
+</div>
+</div>
+<div class="pagenavigation">
+<div class="pagenav">
+<div class="left"><a href="#">« Older Entries</a></div>
+<div class="right"></div>
+<div class="clearer">&nbsp;</div>
+</div>
+<div class="pagenav_bottom"></div>
+</div>
+</div>
+{% endblock %}

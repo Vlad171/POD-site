@@ -18,9 +18,6 @@ MEDIA_URL='/media/'
 STATIC_ROOT = os.path.join(_PATH, 'files', 'static')
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = (
-    os.path.join(_PATH, 'static'),
-)
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
@@ -49,9 +46,15 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+    'django.contrib.flatpages',
+    'disqus',
     'ckeditor',
-    'News'
+    'replays',
+    'News',
 )
+DISQUS_API_KEY = '9riK4XNewvoIiofSxUa1NOABUH2YTwmrDwyQa9Xfl9s2xU2u9tt9ChSOSYs8zUYK'
+DISQUS_WEBSITE_SHORTNAME = 'pod-site'
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -94,6 +97,8 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+SITE_ID = 1
 
 DATE_FORMAT = 'd E Y'
 

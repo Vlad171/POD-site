@@ -18,13 +18,16 @@ class Event(models.Model):
     created = models.DateTimeField(auto_now=True)
     modified = models.DateTimeField(auto_now_add=True)
     eventPhoto=models.ForeignKey('Photo', blank=True,null=True)
-
+    
+    class Meta:
+        verbose_name = ('event')
+    
     def __unicode__(self):
-        return u'%s' % self.bodyEvent
+        return u'%s' % self.titleEvent
 
     @permalink
     def get_absolute_url(self):
-        return ('eventviews', None, {'slug': self.slug})
+        return ('evendetail', None, {'slug': self.slug})
 
 class Photo(models.Model):
     photo= models.ImageField(storage=fs)

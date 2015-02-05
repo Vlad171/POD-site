@@ -14,6 +14,9 @@ urlpatterns = patterns('',
     url(r'^', include('News.urls')),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^ckeditor/', include('ckeditor.urls')),
+    url(r'^news/(?P<slug>\w+)/$', 'News.views.eventdetail', name='detail'),
+    ##url(r'^replays/$', 'replays.views.replayslist', name='replayslist'),###
+    url(r'^replays/(?P<slug>\w+)/$', 'replays.views.replayview', name='replayview'),
 )
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

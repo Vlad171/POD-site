@@ -290,6 +290,10 @@ table.search {
 #footer .right a:hover {
   color: #ffffee;
   text-decoration: underline;
+#rcall  {
+}
+
+
 }
 img.bordered {
   border: 1px solid #dddddd;
